@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎙️よしもと漫才劇場翔 好き顔9選🎙️</title>
+  <title>🎙️マンゲキメンバー好き顔9🎙️</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,7 +43,7 @@
 
     /* 進捗バー */
     .progress-wrapper {
-      display: none; /* スタート画面では非表示 */
+      display: none;
     }
     .progress-info {
       display: flex;
@@ -90,14 +90,24 @@
     }
     .info-card h2 {
       font-size: 1.25rem;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       color: #111;
     }
     .info-card p {
-      font-size: 0.95rem;
-      color: #555;
+      font-size: 0.92rem;
+      color: #444;
       line-height: 1.7;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
+    }
+    .notice-box {
+      background: #fff5f7;
+      border: 1px solid #ffd1dc;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      color: #d6336c;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     /* 折りたたみアコーディオン（詳細・免責事項） */
@@ -399,12 +409,12 @@
 <body>
 
   <header>
-    <h1>🎙️よしもと漫才劇場翔 好き顔9選🎙️</h1>
+    <h1>🎙️マンゲキメンバー好き顔9🎙️</h1>
     <div class="phase-badge" id="phase-badge">START</div>
     <div class="progress-wrapper" id="progress-wrapper">
       <div class="progress-info">
         <span id="progress-text">準備中...</span>
-        <span id="settled-text">0 / 100人</span>
+        <span id="settled-text">0 / 199人</span>
       </div>
       <div class="progress-bar-bg">
         <div class="progress-bar-fill" id="progress-fill"></div>
@@ -415,12 +425,19 @@
   <!-- 0. 予選前スタート画面（ワンクッション） -->
   <div id="start-view" class="main-container">
     <div class="info-card">
-      <h2>🎙️予選</h2>
+      <h2>🎙️予選スタート</h2>
       <p>
-        全35画面<br>
-        表示されたメンバーの中から、<br>
-        顔が好きな人を選んでね。複数選択OK！
+        翔・極メンバー<strong>総勢199名</strong>が大集合！<br>
+        4人ずつ表示される中から、<br>
+        好きな顔を<strong>最大3人まで</strong>選んでね。（0人でもOK）
       </p>
+
+      <div class="notice-box">
+        ⏳ <strong>目安所要時間：約10〜15分</strong><br>
+        かなりのボリュームとなっております！<br>
+        お時間のあるときに、のんびりとお楽しみください☕️
+      </div>
+
       <button class="btn btn-next btn-large" onclick="startPrelim()">予選をはじめる</button>
 
       <!-- 折りたたみ詳細 -->
@@ -428,7 +445,7 @@
         <details>
           <summary>▶︎対象メンバー・このサイトについて</summary>
           <div class="details-content">
-            対象は2026年9月時点でのよしもと漫才劇場翔メンバー。吉本興業公式HPよりお写真をお借りしておりますが、ファンによる非公式ソートの為吉本興業および各権利者とは関係ございません。製作者X@Er_0038連絡はこちらまでお願い致します。
+            対象は2026年9月時点でのよしもと漫才劇場メンバー。吉本興業公式HPよりお写真をお借りしておりますが、ファンによる非公式ソートの為吉本興業および各権利者とは関係ございません。製作者X@Er_0038連絡はこちらまでお願い致します。
           </div>
         </details>
       </div>
@@ -449,8 +466,8 @@
   <!-- 2. 本戦前ワンクッション画面 -->
   <div id="intermission-view" class="main-container" style="display: none;">
     <div class="info-card">
-      <h2>🎉 予選終了！</h2>
-      <p>100名の中から本戦に進出する<br><strong>36名が決定しました！</strong><br><br>ここからは2人ずつの二者択一で<br>あなたの「好き顔9選」と全順位を確定します。</p>
+      <h2>🎉 予選お疲れ様でした！</h2>
+      <p>199名の中から本戦に進出する<br><strong>36名が決定しました！</strong><br><br>ここからは2人ずつの二者択一で<br>あなたの「好き顔9選」と全順位を確定します。</p>
       <button class="btn btn-next btn-large" onclick="startMainBattle()">本戦を開始する</button>
     </div>
   </div>
@@ -499,8 +516,9 @@
   </div>
 
   <script>
-    const TITLE_TEXT = "🎙️よしもと漫才劇場翔 好き顔9選🎙️";
+    const TITLE_TEXT = "🎙️マンゲキメンバー好き顔9🎙️";
 
+    // 199名メンバーリスト（名前・画像URLは一切変更せず、カンマ抜けのみ修正）
     const rawCandidates = [
       { combi: "アポロ軍曹", name: "かりむ", img: "karimu.jpg" },
       { combi: "アポロ軍曹", name: "田中", img: "tanaka_a.jpg" },
@@ -599,7 +617,7 @@
       { combi: "グゴゴ0.9", name: "友人", img: "yuujin.jpg" },
       { combi: "ピン", name: "西野", img: "nishino.jpg" },
       { combi: "ピン", name: "清川雄司", img: "kiyokawa.jpg" },
-      { combi: "ピン", name: "岡田浩太朗", img: "okada.jpg" }
+      { combi: "ピン", name: "岡田浩太朗", img: "okada.jpg" }, // ← ここにカンマを追加して修正
       { combi: "アイラブ地球", name: "きむきむ", img: "kimukimu.jpg" },
       { combi: "アイラブ地球", name: "コウノ・オブ・ザ・イヤー", img: "kono.jpg" },
       { combi: "牛ペペ", name: "ゆたか", img: "yutaka.jpg" },
@@ -702,6 +720,8 @@
       { combi: "ピン", name: "真輝志", img: "makishi.jpg" }
     ];
 
+    const TOTAL_CANDIDATES = rawCandidates.length;
+
     // 予選ステート
     let prelimGroups = [];
     let prelimIndex = 0;
@@ -709,7 +729,6 @@
     let selectedIndices = new Set();
     let final36 = [];
 
-    // 予選開始ボタンを押した時の処理
     function startPrelim() {
       document.getElementById('start-view').style.display = 'none';
       document.getElementById('prelim-view').style.display = 'block';
@@ -735,12 +754,12 @@
       document.getElementById('btn-prelim-back').disabled = (prelimIndex === 0);
 
       const group = prelimGroups[prelimIndex];
-      const processedCount = prelimIndex * 4;
+      const processedCount = Math.min(TOTAL_CANDIDATES, prelimIndex * 4);
 
-      document.getElementById('phase-badge').innerText = "予選（100名 → 36名選出）";
+      document.getElementById('phase-badge').innerText = `予選（${TOTAL_CANDIDATES}名 → 36名選出）`;
       document.getElementById('progress-text').innerText = `組 ${prelimIndex + 1} / ${prelimGroups.length}`;
-      document.getElementById('settled-text').innerText = `${processedCount} / 100人`;
-      document.getElementById('progress-fill').style.width = `${(processedCount / 100) * 100}%`;
+      document.getElementById('settled-text').innerText = `${processedCount} / ${TOTAL_CANDIDATES}人`;
+      document.getElementById('progress-fill').style.width = `${(processedCount / TOTAL_CANDIDATES) * 100}%`;
 
       const container = document.getElementById('prelim-choices');
       container.innerHTML = '';
@@ -820,7 +839,7 @@
       document.getElementById('intermission-view').style.display = 'block';
       document.getElementById('phase-badge').innerText = "予選完了";
       document.getElementById('progress-text').innerText = "36名選出完了";
-      document.getElementById('settled-text').innerText = "100 / 100人";
+      document.getElementById('settled-text').innerText = `${TOTAL_CANDIDATES} / ${TOTAL_CANDIDATES}人`;
       document.getElementById('progress-fill').style.width = "100%";
     }
 
@@ -947,7 +966,7 @@
       // X共有用テキスト
       const siteUrl = window.location.href;
       const top3Text = `🥇1位: ${top9[0].name} (${top9[0].combi})\n🥈2位: ${top9[1].name} (${top9[1].combi})\n🥉3位: ${top9[2].name} (${top9[2].combi})`;
-      const shareContent = `${TITLE_TEXT}\n\n私のベスト3はこちら！\n${top3Text}\n\n▼あなたの好き顔9選を作ってみよう\n${siteUrl}\n\n#マンゲキ翔好き顔9選`;
+      const shareContent = `${TITLE_TEXT}\n\n私のベスト3はこちら！\n${top3Text}\n\n▼あなたの好き顔9選を作ってみよう\n${siteUrl}\n\n#マンゲキ好き顔9`;
 
       document.getElementById('share-text').value = shareContent;
       document.getElementById('btn-x-link').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareContent)}`;
